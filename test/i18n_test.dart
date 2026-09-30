@@ -5,6 +5,7 @@ import 'dart:ui' show PlatformDispatcher;
 import 'package:flutter_test/flutter_test.dart';
 import 'package:gymmane/catalog/exercise_catalog.dart';
 import 'package:gymmane/l10n/catalog_es.dart';
+import 'package:gymmane/l10n/catalog_fr.dart';
 import 'package:gymmane/l10n/l10n.dart';
 import 'package:gymmane/models/exercise.dart';
 import 'package:gymmane/models/workout.dart';
@@ -254,6 +255,43 @@ void main() {
     test('no leftover mojibake in the catalogue', () {
       final bad = kExercises.where((e) => e.name.contains('Â') || e.name.contains('�'));
       expect(bad.map((e) => e.name), isEmpty);
+    });
+  });
+
+  group('catalogue en français', () {
+    test('every factory exercise has a French name and steps that line up', () {
+      final bad = <String>[];
+      for (final e in kExercises) {
+        final name = kExerciseNameFr[e.id];
+        final steps = kExerciseStepsFr[e.id];
+        if (name == null || name.trim().isEmpty || name == e.name) bad.add('${e.name}: nom "$name"');
+        if (steps == null || steps.length != e.steps.length) {
+          bad.add('${e.name}: ${steps?.length} étapes vs ${e.steps.length}');
+          continue;
+        }
+        for (var i = 0; i < steps.length; i++) {
+          if (steps[i].trim().isEmpty || steps[i] == e.steps[i]) bad.add('${e.name}: "${steps[i]}"');
+        }
+      }
+      expect(bad, isEmpty);
+    });
+
+    test('the maps have no entries for exercises that do not exist', () {
+      final ids = kExercises.map((e) => e.id).toSet();
+      expect(kExerciseNameFr.keys.where((k) => !ids.contains(k)), isEmpty);
+      expect(kExerciseStepsFr.keys.where((k) => !ids.contains(k)), isEmpty);
+    });
+
+    test('French names are unique', () {
+      final names = kExerciseNameFr.values.map((n) => n.trim().toLowerCase()).toList();
+      expect(names.toSet().length, names.length);
+    });
+
+    test('names and steps follow the active language', () {
+      final bench = kExercises.firstWhere((e) => e.id == 'EIeI8Vf');
+      setAppLanguage('fr');
+      expect(exerciseName(bench), kExerciseNameFr['EIeI8Vf']);
+      expect(exerciseSteps(bench), kExerciseStepsFr['EIeI8Vf']);
     });
   });
 

@@ -2,6 +2,7 @@ import 'package:flutter_test/flutter_test.dart';
 import 'package:gymmane/catalog/exercise_catalog.dart';
 import 'package:gymmane/catalog/program_templates.dart';
 import 'package:gymmane/l10n/catalog_es.dart';
+import 'package:gymmane/l10n/catalog_fr.dart';
 import 'package:gymmane/l10n/catalog_it.dart';
 import 'package:gymmane/l10n/catalog_zh.dart';
 import 'package:gymmane/models/exercise.dart';
@@ -81,11 +82,12 @@ void main() {
     expect(kWarmupIds, containsAll(['yuris-shoulder-band-warmup', 'wrist-prep']));
   });
 
-  test('cada ejercicio nuevo tiene nombre y pasos en español, italiano y chino', () {
+  test('cada ejercicio nuevo tiene nombre y pasos en español, francés, italiano y chino', () {
     for (final id in _added) {
       expect(byId[id], isNotNull, reason: id);
       for (final (names, steps) in [
         (kExerciseNameEs, kExerciseStepsEs),
+        (kExerciseNameFr, kExerciseStepsFr),
         (kExerciseNameIt, kExerciseStepsIt),
         (kExerciseNameZh, kExerciseStepsZh),
       ]) {
