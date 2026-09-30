@@ -1109,5 +1109,6 @@
   "@groupDeleteTitle": {"placeholders": {"name": {"type": "String"}}},
   "groupDeleteBody": "{count} will be deleted. Your workout history is kept.",
   "@groupDeleteBody": {"placeholders": {"count": {"type": "String"}}},
-  "tplRr": "The r/bodyweightfitness classic: full body three days a week. Move up a step when it gets easy."
+  "tplRr": "The r/bodyweightfitness classic: full body three days a week. Move up a step when it gets easy.",
+  "englishSubtitlesSetting": "English names under translations"
 }

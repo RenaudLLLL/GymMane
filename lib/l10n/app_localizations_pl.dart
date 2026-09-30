@@ -3206,4 +3206,7 @@ class AppLocalizationsPl extends AppLocalizations {
   @override
   String get tplRr =>
       'Klasyk z r/bodyweightfitness: całe ciało trzy dni w tygodniu. Przejdź o krok wyżej, gdy zrobi się łatwo.';
+
+  @override
+  String get englishSubtitlesSetting => 'Angielskie nazwy pod tłumaczeniem';
 }

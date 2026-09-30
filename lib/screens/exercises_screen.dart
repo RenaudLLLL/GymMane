@@ -313,6 +313,13 @@ class _ExercisesScreenState extends State<ExercisesScreen> {
                             maxLines: 1,
                             overflow: TextOverflow.ellipsis,
                             style: AppTheme.f(14.5, weight: FontWeight.w600, color: gc.text)),
+                        if (exerciseEnglishName(ex) case final english?) ...[
+                          const SizedBox(height: 1),
+                          Text(english,
+                              maxLines: 1,
+                              overflow: TextOverflow.ellipsis,
+                              style: AppTheme.f(12, weight: FontWeight.w500, color: gc.textTertiary)),
+                        ],
                         const SizedBox(height: 4),
                         Text('${t.equipment(ex.equipment)} · ${t.difficulty(ex.difficulty)}',
                             maxLines: 1,

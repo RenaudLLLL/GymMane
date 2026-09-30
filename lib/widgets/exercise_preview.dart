@@ -82,6 +82,8 @@ class _ExercisePreviewState extends State<_ExercisePreview> {
     final gc = context.gc;
     final pad = MediaQuery.viewPaddingOf(context);
     final steps = fit.activeExerciseSteps(ex);
+    final englishName = exerciseEnglishName(ex);
+    final englishSteps = exerciseEnglishSteps(ex);
     final video = _video;
     return Padding(
       padding: EdgeInsets.fromLTRB(16, pad.top + 24, 16, pad.bottom + 24),
@@ -124,6 +126,11 @@ class _ExercisePreviewState extends State<_ExercisePreview> {
                           children: [
                             Text(exerciseName(ex),
                                 style: AppTheme.f(24, weight: FontWeight.w800, color: gc.text, height: 1.1)),
+                            if (englishName != null) ...[
+                              const SizedBox(height: 6),
+                              Text(englishName,
+                                  style: AppTheme.f(13.5, weight: FontWeight.w500, color: gc.textTertiary, height: 1.3)),
+                            ],
                             const SizedBox(height: 16),
                             Row(
                               crossAxisAlignment: CrossAxisAlignment.start,
@@ -147,7 +154,7 @@ class _ExercisePreviewState extends State<_ExercisePreview> {
                               ],
                               const SizedBox(height: 14),
                               for (var i = 0; i < steps.length; i++) ...[
-                                _step(gc, i, steps[i], video),
+                                _step(gc, i, steps[i], englishSteps?[i], video),
                                 if (i < steps.length - 1) const SizedBox(height: 12),
                               ],
                             ],
@@ -198,7 +205,7 @@ class _ExercisePreviewState extends State<_ExercisePreview> {
         ),
       );
 
-  Widget _step(GymColors gc, int i, String text, VideoPlayerController? video) {
+  Widget _step(GymColors gc, int i, String text, String? english, VideoPlayerController? video) {
     final mark = video == null ? null : fit.videoMark(ex.id, i);
     return GestureDetector(
       behavior: HitTestBehavior.opaque,
@@ -215,7 +222,17 @@ class _ExercisePreviewState extends State<_ExercisePreview> {
           ),
           const SizedBox(width: 12),
           Expanded(
-            child: Text(text, style: AppTheme.f(14, weight: FontWeight.w500, color: gc.textSecondary, height: 1.5)),
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                Text(text, style: AppTheme.f(14, weight: FontWeight.w500, color: gc.textSecondary, height: 1.5)),
+                if (english != null) ...[
+                  const SizedBox(height: 3),
+                  Text(english,
+                      style: AppTheme.f(12.5, weight: FontWeight.w500, color: gc.textTertiary, height: 1.45)),
+                ],
+              ],
+            ),
           ),
           if (video != null) ...[
             const SizedBox(width: 8),
