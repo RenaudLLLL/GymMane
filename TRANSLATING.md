@@ -80,7 +80,7 @@ for you.
 ## Questions
 
 Not sure where a string appears? Open an
-[issue](https://github.com/InlitX/GymMane/issues) — a screenshot of the screen
+[issue](https://github.com/RenaudLLLL/GymMane/issues) — a screenshot of the screen
 you're unsure about is the fastest way to get an answer.
 
 ---
