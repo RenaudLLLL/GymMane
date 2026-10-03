@@ -3197,4 +3197,7 @@ class AppLocalizationsAr extends AppLocalizations {
   @override
   String get tplRr =>
       'الروتين الكلاسيكي من r/bodyweightfitness: الجسم كله ثلاثة أيام في الأسبوع. انتقل إلى المستوى التالي حين يصبح سهلًا.';
+
+  @override
+  String get englishSubtitlesSetting => 'الأسماء الإنجليزية تحت الترجمة';
 }

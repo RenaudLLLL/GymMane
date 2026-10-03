@@ -240,6 +240,9 @@ class SessionScreen extends StatelessWidget {
         ],
         Text(ex == null ? '' : t.catalogName(ex.id, ex.name),
             style: AppTheme.f(26, weight: FontWeight.w700, color: gc.text)),
+        if (ex == null ? null : t.catalogEnglishName(ex.id, ex.name) case final english?)
+          Text(english,
+              style: AppTheme.f(13.5, weight: FontWeight.w500, color: gc.textTertiary, height: 1.3)),
         const SizedBox(height: 8),
         Container(
           padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 5),

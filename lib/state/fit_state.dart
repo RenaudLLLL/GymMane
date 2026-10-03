@@ -182,6 +182,7 @@ class FitState extends FitCore
     autoAdvance = data['autoAdvance'] as bool? ?? true;
     keepScreenOn = data['keepAwake'] as bool? ?? true;
     startCountdown = data['countdown'] as bool? ?? true;
+    englishSubtitles = data['enSub'] as bool? ?? true;
     gamification = data['gamify'] as bool? ?? true;
     logRpe = data['rpe'] as bool? ?? false;
     effortScale = data['effort'] == 'rir' ? 'rir' : 'rpe';
@@ -349,6 +350,7 @@ class FitState extends FitCore
         'autoAdvance': autoAdvance,
         'keepAwake': keepScreenOn,
         'countdown': startCountdown,
+        'enSub': englishSubtitles,
         'gamify': gamification,
         'rpe': logRpe,
         'effort': effortScale,
@@ -447,6 +449,7 @@ class FitState extends FitCore
     weekStartDay = DateTime.monday;
     autoAdvance = true;
     startCountdown = true;
+    englishSubtitles = true;
     gamification = true;
     logRpe = false;
     effortScale = 'rpe';

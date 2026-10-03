@@ -1219,5 +1219,6 @@
   "groupDeleteAll": "グループとルーティンを削除",
   "groupDeleteTitle": "「{name}」を削除しますか?",
   "groupDeleteBody": "{count}が削除されます。トレーニング履歴は残ります。",
-  "tplRr": "r/bodyweightfitness の定番:週3日の全身トレーニング。楽になったら次の段階へ。"
+  "tplRr": "r/bodyweightfitness の定番:週3日の全身トレーニング。楽になったら次の段階へ。",
+  "englishSubtitlesSetting": "訳語の下に英語名を表示"
 }

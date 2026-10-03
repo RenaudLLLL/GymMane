@@ -42,6 +42,9 @@ mixin SettingsState on FitCore, ToolsState, LibraryState {
   int? alarmAskedAt;
   String language = 'en';
 
+  bool get englishSubtitles => catalogEnglishSubtitles;
+  set englishSubtitles(bool on) => catalogEnglishSubtitles = on;
+
   Locale get locale => localeOf(language);
 
   void _adoptDeviceLanguage() =>
@@ -302,6 +305,12 @@ mixin SettingsState on FitCore, ToolsState, LibraryState {
 
   void toggleStartCountdown() {
     startCountdown = !startCountdown;
+    _persist();
+    notifyListeners();
+  }
+
+  void toggleEnglishSubtitles() {
+    englishSubtitles = !englishSubtitles;
     _persist();
     notifyListeners();
   }

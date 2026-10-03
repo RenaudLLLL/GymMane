@@ -3205,4 +3205,7 @@ class AppLocalizationsTr extends AppLocalizations {
   @override
   String get tplRr =>
       'r/bodyweightfitness klasiği: haftada üç gün tüm vücut. Kolaylaşınca bir sonraki aşamaya geç.';
+
+  @override
+  String get englishSubtitlesSetting => 'Çevirilerin altında İngilizce adlar';
 }

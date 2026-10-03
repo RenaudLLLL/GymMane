@@ -50,6 +50,8 @@ class _ExerciseDetailScreenState extends State<ExerciseDetailScreen> {
     final secondary =
         ex.secondary.map(muscleLabel).join(', ').isEmpty ? t.none : ex.secondary.map(muscleLabel).join(', ');
     final steps = fit.activeExerciseSteps(ex);
+    final englishName = exerciseEnglishName(ex);
+    final englishSteps = exerciseEnglishSteps(ex);
     final pr = fit.exerciseRecord(ex.id);
     final oneRm = fit.oneRmSeries(ex.id);
     final history = fit.exerciseHistory(ex.id);
@@ -158,6 +160,11 @@ class _ExerciseDetailScreenState extends State<ExerciseDetailScreen> {
                   ),
                   Text(exerciseName(ex),
                       style: AppTheme.f(26, weight: FontWeight.w800, color: gc.text, height: 1.1)),
+                  if (englishName != null) ...[
+                    const SizedBox(height: 6),
+                    Text(englishName,
+                        style: AppTheme.f(14, weight: FontWeight.w500, color: gc.textTertiary, height: 1.3)),
+                  ],
                   const SizedBox(height: 18),
                   Row(
                     crossAxisAlignment: CrossAxisAlignment.start,
@@ -285,7 +292,7 @@ class _ExerciseDetailScreenState extends State<ExerciseDetailScreen> {
                       ),
                     ],
                     for (int i = 0; i < steps.length; i++) ...[
-                      _step(gc, i + 1, steps[i]),
+                      _step(gc, i + 1, steps[i], englishSteps?[i]),
                       if (i < steps.length - 1) const SizedBox(height: 14),
                     ],
                   ],
@@ -598,7 +605,7 @@ class _ExerciseDetailScreenState extends State<ExerciseDetailScreen> {
     );
   }
 
-  Widget _step(GymColors gc, int n, String text) {
+  Widget _step(GymColors gc, int n, String text, [String? english]) {
     return Row(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
@@ -611,8 +618,18 @@ class _ExerciseDetailScreenState extends State<ExerciseDetailScreen> {
         ),
         const SizedBox(width: 12),
         Expanded(
-          child: Text(text,
-              style: AppTheme.f(14, weight: FontWeight.w500, color: gc.textSecondary, height: 1.5)),
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              Text(text,
+                  style: AppTheme.f(14, weight: FontWeight.w500, color: gc.textSecondary, height: 1.5)),
+              if (english != null) ...[
+                const SizedBox(height: 3),
+                Text(english,
+                    style: AppTheme.f(12.5, weight: FontWeight.w500, color: gc.textTertiary, height: 1.45)),
+              ],
+            ],
+          ),
         ),
       ],
     );
