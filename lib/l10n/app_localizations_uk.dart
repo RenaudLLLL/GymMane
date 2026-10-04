@@ -3212,4 +3212,7 @@ class AppLocalizationsUk extends AppLocalizations {
   @override
   String get tplRr =>
       'Класика r/bodyweightfitness: усе тіло три дні на тиждень. Переходь на наступний щабель, коли стане легко.';
+
+  @override
+  String get englishSubtitlesSetting => 'Англійські назви під перекладом';
 }

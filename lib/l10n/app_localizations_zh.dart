@@ -3065,6 +3065,9 @@ class AppLocalizationsZh extends AppLocalizations {
 
   @override
   String get tplRr => 'r/bodyweightfitness 的经典计划:每周三天全身训练。变轻松了就进阶到下一级。';
+
+  @override
+  String get englishSubtitlesSetting => '在译名下显示英文名';
 }
 
 /// The translations for Chinese, using the Han script (`zh_Hant`).
@@ -6151,4 +6154,7 @@ class AppLocalizationsZhHant extends AppLocalizationsZh {
 
   @override
   String get tplRr => 'r/bodyweightfitness 的經典計畫:每週三天全身訓練。變輕鬆了就進階到下一級。';
+
+  @override
+  String get englishSubtitlesSetting => '在譯名下顯示英文名';
 }

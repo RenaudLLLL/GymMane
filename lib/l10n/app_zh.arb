@@ -979,5 +979,6 @@
   "groupDeleteAll": "删除分组及其计划",
   "groupDeleteTitle": "删除“{name}”?",
   "groupDeleteBody": "将删除{count}。训练记录会保留。",
-  "tplRr": "r/bodyweightfitness 的经典计划:每周三天全身训练。变轻松了就进阶到下一级。"
+  "tplRr": "r/bodyweightfitness 的经典计划:每周三天全身训练。变轻松了就进阶到下一级。",
+  "englishSubtitlesSetting": "在译名下显示英文名"
 }

@@ -3105,4 +3105,7 @@ class AppLocalizationsJa extends AppLocalizations {
 
   @override
   String get tplRr => 'r/bodyweightfitness の定番:週3日の全身トレーニング。楽になったら次の段階へ。';
+
+  @override
+  String get englishSubtitlesSetting => '訳語の下に英語名を表示';
 }

@@ -3215,4 +3215,7 @@ class AppLocalizationsDe extends AppLocalizations {
   @override
   String get tplRr =>
       'Der Klassiker von r/bodyweightfitness: Ganzkörper an drei Tagen pro Woche. Geh eine Stufe höher, wenn es leicht wird.';
+
+  @override
+  String get englishSubtitlesSetting => 'Englische Namen unter Übersetzungen';
 }

@@ -3295,4 +3295,7 @@ class AppLocalizationsRu extends AppLocalizations {
   @override
   String get tplRr =>
       'Классика r/bodyweightfitness: всё тело три дня в неделю. Переходи на следующую ступень, когда станет легко.';
+
+  @override
+  String get englishSubtitlesSetting => 'Английские названия под переводом';
 }

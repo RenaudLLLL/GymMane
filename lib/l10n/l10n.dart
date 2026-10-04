@@ -14,6 +14,11 @@ const Map<String, Map<String, String>> _catalogNames = {'es': kExerciseNameEs, '
 const Map<String, Map<String, List<String>>> _catalogSteps = {'es': kExerciseStepsEs, 'fr': kExerciseStepsFr, 'it': kExerciseStepsIt, 'zh': kExerciseStepsZh};
 
 String appLanguage = 'en';
+
+/// Show the original English name (and steps) of a catalogue exercise under
+/// its translation, so the app stays usable next to English-speaking coaches,
+/// videos and gym signs. Mirrors `SettingsState.englishSubtitles`.
+bool catalogEnglishSubtitles = true;
 AppLocalizations t = lookupAppLocalizations(const Locale('en'));
 
 String _codeOf(Locale l) => l.scriptCode == null ? l.languageCode : '${l.languageCode}_${l.scriptCode}';
@@ -237,6 +242,22 @@ extension GymL10n on AppLocalizations {
 
   List<String> catalogSteps(String id, List<String> fallback) =>
       _catalogSteps[appLanguage]?[id] ?? fallback;
+
+  /// The English name to show under a translated one, or null when there is
+  /// nothing to add: the setting is off, or the name was not translated.
+  String? catalogEnglishName(String id, String english) {
+    if (!catalogEnglishSubtitles) return null;
+    final local = _catalogNames[appLanguage]?[id];
+    return local == null || local == english ? null : english;
+  }
+
+  /// The English steps to show under translated ones, or null (see
+  /// [catalogEnglishName]). Only returned when both lists line up step by step.
+  List<String>? catalogEnglishSteps(String id, List<String> english) {
+    if (!catalogEnglishSubtitles) return null;
+    final local = _catalogSteps[appLanguage]?[id];
+    return local == null || local.length != english.length ? null : english;
+  }
 }
 
 String _capitalize(String s) => s.isEmpty ? s : s[0].toUpperCase() + s.substring(1);
