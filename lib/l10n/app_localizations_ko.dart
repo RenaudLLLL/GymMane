@@ -3121,4 +3121,7 @@ class AppLocalizationsKo extends AppLocalizations {
 
   @override
   String get tplRr => 'r/bodyweightfitness의 대표 루틴: 주 3일 전신 운동. 쉬워지면 다음 단계로 넘어가세요.';
+
+  @override
+  String get englishSubtitlesSetting => '번역 아래에 영어 이름 표시';
 }

@@ -92,6 +92,13 @@ class SettingsScreen extends StatelessWidget {
                   ]),
                 ),
               ),
+              if (fit.language != 'en')
+                GestureDetector(
+                  behavior: HitTestBehavior.opaque,
+                  onTap: fit.toggleEnglishSubtitles,
+                  child: _prefRow(gc, PhosphorIconsRegular.subtitles, t.englishSubtitlesSetting,
+                      TinySwitch(on: fit.englishSubtitles)),
+                ),
               _prefRow(gc, PhosphorIconsRegular.scales, t.unitsLabel, SegToggle([
                 SegOption('kg', fit.units == 'kg', () => fit.setUnits('kg')),
                 SegOption('lb', fit.units == 'lb', () => fit.setUnits('lb')),

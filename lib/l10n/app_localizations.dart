@@ -5715,6 +5715,12 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'The r/bodyweightfitness classic: full body three days a week. Move up a step when it gets easy.'**
   String get tplRr;
+
+  /// No description provided for @englishSubtitlesSetting.
+  ///
+  /// In en, this message translates to:
+  /// **'English names under translations'**
+  String get englishSubtitlesSetting;
 }
 
 class _AppLocalizationsDelegate extends LocalizationsDelegate<AppLocalizations> {

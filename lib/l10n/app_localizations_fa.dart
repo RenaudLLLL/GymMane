@@ -3185,4 +3185,7 @@ class AppLocalizationsFa extends AppLocalizations {
   @override
   String get tplRr =>
       'روتین کلاسیک r/bodyweightfitness: کل بدن، سه روز در هفته. وقتی آسان شد یک پله بالاتر برو.';
+
+  @override
+  String get englishSubtitlesSetting => 'نام‌های انگلیسی زیر ترجمه';
 }

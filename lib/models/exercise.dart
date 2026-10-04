@@ -104,6 +104,10 @@ String exerciseName(Exercise e) => t.catalogName(e.id, e.name);
 
 List<String> exerciseSteps(Exercise e) => t.catalogSteps(e.id, e.steps);
 
+String? exerciseEnglishName(Exercise e) => t.catalogEnglishName(e.id, e.name);
+
+List<String>? exerciseEnglishSteps(Exercise e) => t.catalogEnglishSteps(e.id, e.steps);
+
 String muscleGroup(String muscleId) {
   switch (muscleId) {
     case 'chest':

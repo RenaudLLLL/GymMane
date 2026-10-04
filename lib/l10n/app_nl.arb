@@ -1219,5 +1219,6 @@
   "groupDeleteAll": "Groep en routines verwijderen",
   "groupDeleteTitle": "“{name}” verwijderen?",
   "groupDeleteBody": "{count} worden verwijderd. Je trainingsgeschiedenis blijft bewaard.",
-  "tplRr": "De klassieker van r/bodyweightfitness: drie dagen per week het hele lichaam. Ga een stap verder als het makkelijk wordt."
+  "tplRr": "De klassieker van r/bodyweightfitness: drie dagen per week het hele lichaam. Ga een stap verder als het makkelijk wordt.",
+  "englishSubtitlesSetting": "Engelse namen onder vertalingen"
 }
